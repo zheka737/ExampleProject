@@ -12,11 +12,14 @@ import {
 import { Product } from "./product.model";
 
 @Directive({
-  selector: "input[paModel]"
+  selector: "input[paModel]",
+  exportAs: "paModel"
 })
 export class PaModel {
   @Input("paModel")
   modelProperty: string;
+
+  direction: string = 'None';
 
   @HostBinding("value")
   fieldValue: string = "";
@@ -25,6 +28,7 @@ export class PaModel {
     let change = changes["modelProperty"];
     if (change.currentValue != this.fieldValue) {
       this.fieldValue = changes["modelProperty"].currentValue || "";
+      this.direction = 'Model';
     }
   }
 
@@ -35,5 +39,6 @@ export class PaModel {
   updateValue(newValue: string) {
     this.fieldValue = newValue;
     this.update.emit(newValue);
+    this.direction = 'Element';
   }
 }
