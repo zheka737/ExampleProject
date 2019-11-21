@@ -10,42 +10,9 @@ import { ProductFormGroup } from "./form.model";
 })
 export class ProductComponent {
   model: Model = new Model();
-  showTable: boolean = true;
-
-  form: ProductFormGroup = new ProductFormGroup();
-
-  getProduct(key: number): Product {
-    return this.model.getProduct(key);
-  }
-
-  getProducts(): Product[] {
-    return this.model.getProducts();
-  }
-
-  newProduct: Product = new Product();
-
-  get jsonProduct() {
-    return JSON.stringify(this.newProduct);
-  }
 
   addProduct(p: Product) {
     this.model.saveProduct(p);
   }
-
-  formSubmitted: boolean = false;
-
-  deleteProduct(key: number) {
-    this.model.deleteProduct(key);
-    }
-    
-  
-  submitForm(form: NgForm) {
-    this.formSubmitted = true;
-    if (form.valid) {
-      this.addProduct(this.newProduct);
-      this.newProduct = new Product();
-      form.reset();
-      this.formSubmitted = false;
-    }
-  }
 }
+
