@@ -1,7 +1,7 @@
 import { HostBinding, Directive } from "@angular/core";
 
 @Directive({
-    selector: 'td'
+    selector: 'td[paApplyColor]'
 })
 export class PaCellColor {
 
