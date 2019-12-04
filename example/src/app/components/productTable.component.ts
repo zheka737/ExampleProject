@@ -1,7 +1,8 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { Model } from "./model/repository.model";
-import { Product } from "./model/product.model";
-import { LogService } from "./common/log.service";
+import { LogService } from "../common/log.service";
+import { Model } from "../model/repository.model";
+import { Product } from "../model";
+
 @Component({
     selector: "paProductTable",
     templateUrl: "productTable.component.html",
