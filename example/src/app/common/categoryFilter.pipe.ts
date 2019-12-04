@@ -1,5 +1,7 @@
 import { Pipe } from "@angular/core";
-import { Product } from "./product.model";
+import { Product } from "../model";
+
+
 
 
 @Pipe({
@@ -8,7 +10,7 @@ import { Product } from "./product.model";
 })
 export class PaCategoryFilterPipe {
     transform(products: Product[], category: string){
-        return category == undefined ? products 
+        return category == undefined ? products
             : products.filter(p => p.category == category);
     }
 }

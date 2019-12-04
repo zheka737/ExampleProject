@@ -1,13 +1,15 @@
 import { Component, Output, EventEmitter, ViewEncapsulation } from "@angular/core";
-import { ProductFormGroup } from "./form.model";
-import { Product } from "./product.model";
-import { Model } from "./repository.model";
+import { ProductFormGroup } from "./model/form.model";
+import { Product } from "./model/product.model";
+import { Model } from "./model/repository.model";
+import { VALUE_SERVICE } from "./common/valueDisplay.directive";
 
 @Component({
     selector: "paProductForm",
     templateUrl: 'productForm.component.html',
     // styleUrls: ['productForm.component.css'],
-    // encapsulation: ViewEncapsulation.Emulated
+    // encapsulation: ViewEncapsulation.Emulated,
+    providers: [{provide: VALUE_SERVICE, useValue: 'Oranges'}]
 })
 export class ProductFormComponent {
     form: ProductFormGroup = new ProductFormGroup();

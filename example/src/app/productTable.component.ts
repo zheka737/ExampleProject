@@ -1,8 +1,7 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { Model } from "./repository.model";
-import { Product } from "./product.model";
-import { DiscountService } from "./discount.service";
-import { LogService } from "./log.service";
+import { Model } from "./model/repository.model";
+import { Product } from "./model/product.model";
+import { LogService } from "./common/log.service";
 @Component({
     selector: "paProductTable",
     templateUrl: "productTable.component.html",
@@ -24,7 +23,7 @@ export class ProductTableComponent {
     getProducts(): Product[] {
         return this.dataModel.getProducts();
     }
-    
+
     deleteProduct(key: number) {
         this.dataModel.deleteProduct(key);
     }

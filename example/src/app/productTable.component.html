@@ -3,7 +3,7 @@
     <th></th><th>Name</th><th>Category</th><th>Price</th>
     <th>Discount</th><th></th>
     </tr>
-    
+
   <tr *paFor="let item of getProducts(); let i = index;
   let odd = odd; let even = even"
       [class.bg-info]="odd"
@@ -27,5 +27,5 @@
   </tr>
 </table>
 
-<paDiscountEditor ></paDiscountEditor>
-<paDiscountDisplay ></paDiscountDisplay>
+<!-- <paDiscountEditor ></paDiscountEditor>
+<paDiscountDisplay ></paDiscountDisplay> -->
